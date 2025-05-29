@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #000 100%);
+}
+
+.floating-text {
+    position: absolute;
+    color: rgba(255, 182, 193, 0.8);
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.4);
+    white-space: nowrap;
+    animation: fallDown 8s linear infinite;
+    user-select: none;
+    z-index: 1;
+}
+
+.floating-text.large {
+    font-size: 28px;
+    font-weight: 800;
+    color: rgba(255, 192, 203, 0.9);
+    text-shadow: 0 0 20px rgba(255, 192, 203, 0.7);
+    z-index: 3;
+}
+
+.floating-text.medium {
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(255, 182, 193, 0.85);
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+    z-index: 2;
+}
+
+.floating-text.small {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 182, 193, 0.6);
+    text-shadow: 0 0 8px rgba(255, 182, 193, 0.3);
+    z-index: 1;
+}
+
+.floating-text.front {
+    z-index: 10;
+    transform: scale(1.2);
+    text-shadow: 0 0 25px rgba(255, 192, 203, 0.9);
+}
+
+.floating-text.back {
+    z-index: 0;
+    transform: scale(0.8);
+    opacity: 0.4;
+    filter: blur(2px);
+}
+
+.heart {
+    color: #ff69b4;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+    font-weight: 800;
+}
+
+.accent {
+    color: #ffb6c1;
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+    font-weight: 800;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh + 100px)) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fallDownSlow {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh + 100px)) rotate(-8deg);
+        opacity: 0;
+    }
+}
+
+.floating-text.slow {
+    animation: fallDownSlow 12s linear infinite;
+}
+
+.blur-effect {
+    filter: blur(1.5px);
+    opacity: 0.6;
+}
+
+.glow-effect {
+    text-shadow: 0 0 30px rgba(255, 192, 203, 1);
+    font-weight: 900;
+}
